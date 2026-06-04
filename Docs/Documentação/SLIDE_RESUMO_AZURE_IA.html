@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serviços de IA - Microsoft Azure | Apresentação</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .slide-container {
+            width: 100%;
+            max-width: 1200px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+
+        .slide {
+            display: none;
+            min-height: 600px;
+            padding: 60px;
+            animation: fadeIn 0.5s ease-in;
+        }
+
+        .slide.active {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Slide 1 - Capa */
+        .slide-1 {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .slide-1 h1 {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .slide-1 .subtitle {
+            font-size: 1.8em;
+            margin-bottom: 40px;
+            font-weight: 300;
+        }
+
+        .slide-1 .info {
+            font-size: 1.1em;
+            margin-top: 40px;
+            opacity: 0.9;
+        }
+
+        /* Slide 2-5 - Conteúdo */
+        .slide h2 {
+            color: #667eea;
+            font-size: 2.5em;
+            margin-bottom: 40px;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 20px;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .card {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 10px;
+            border-left: 5px solid #667eea;
+        }
+
+        .card h3 {
+            color: #764ba2;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+
+        .card p {
+            color: #333;
+            line-height: 1.6;
+            font-size: 0.95em;
+        }
+
+        .card ul {
+            margin-left: 20px;
+            color: #333;
+            font-size: 0.95em;
+            line-height: 1.8;
+        }
+
+        .card li {
+            margin-bottom: 8px;
+        }
+
+        /* Slide 3 - Speech Service */
+        .slide-3 .content-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .feature-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .feature-item {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+
+        .feature-item h4 {
+            color: #667eea;
+            margin-bottom: 5px;
+        }
+
+        .feature-item p {
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        /* Slide 4 - Language Service */
+        .slide-4 {
+            background: white;
+        }
+
+        .feature-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .feature-table th {
+            background: #667eea;
+            color: white;
+            padding: 12px;
+            text-align: left;
+        }
+
+        .feature-table td {
+            padding: 12px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .feature-table tr:hover {
+            background: #f0f0f0;
+        }
+
+        /* Slide 5 - Vision Service */
+        .slide-5 {
+            background: white;
+        }
+
+        .vision-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .vision-card {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            border-top: 4px solid #667eea;
+            text-align: center;
+        }
+
+        .vision-card .icon {
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+
+        .vision-card h4 {
+            color: #764ba2;
+            margin-bottom: 10px;
+        }
+
+        .vision-card p {
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        /* Slide 6 - Security */
+        .slide-6 {
+            background: white;
+        }
+
+        .security-categories {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .security-category {
+            background: #fff3cd;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #ffc107;
+        }
+
+        .security-category h4 {
+            color: #856404;
+            margin-bottom: 10px;
+        }
+
+        .security-category p {
+            color: #333;
+            font-size: 0.9em;
+            line-height: 1.6;
+        }
+
+        /* Slide 7 - Conclusão */
+        .slide-7 {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .slide-7 h2 {
+            color: white;
+            border-bottom-color: white;
+            font-size: 3em;
+        }
+
+        .conclusion-content {
+            font-size: 1.2em;
+            line-height: 1.8;
+            margin-top: 40px;
+        }
+
+        .next-steps {
+            margin-top: 40px;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .next-steps h3 {
+            margin-bottom: 15px;
+        }
+
+        .next-steps ul {
+            list-style: none;
+        }
+
+        .next-steps li {
+            margin: 10px 0;
+            font-size: 1.1em;
+        }
+
+        .next-steps li:before {
+            content: "✓ ";
+            margin-right: 10px;
+            font-weight: bold;
+        }
+
+        /* Navigation */
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 60px;
+            background: #f8f9fa;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        button {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background: #764ba2;
+        }
+
+        button:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+
+        .slide-counter {
+            color: #667eea;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+
+        .dots {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #ddd;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .dot.active {
+            background: #667eea;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .slide {
+                padding: 30px;
+            }
+
+            .nav-container {
+                padding: 20px 30px;
+            }
+
+            .slide h2 {
+                font-size: 2em;
+            }
+
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .feature-table {
+                font-size: 0.85em;
+            }
+
+            .vision-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .security-categories {
+                grid-template-columns: 1fr;
+            }
+
+            .slide-1 h1 {
+                font-size: 2.5em;
+            }
+
+            .slide-1 .subtitle {
+                font-size: 1.3em;
+            }
+        }
+
+        .highlight {
+            background: #fff3cd;
+            padding: 2px 6px;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <!-- Slide 1: Capa -->
+        <div class="slide slide-1 active">
+            <h1>🚀 Serviços de Inteligência Artificial</h1>
+            <div class="subtitle">Microsoft Azure IA</div>
+            <div class="info">
+                <p>Bootcamp Bradesco - DIO</p>
+                <p style="margin-top: 10px; font-size: 0.9em;">Exploração Prática de Serviços Cognitivos em Nuvem</p>
+            </div>
+        </div>
+
+        <!-- Slide 2: Visão Geral -->
+        <div class="slide slide-2">
+            <h2>📋 Visão Geral dos Serviços</h2>
+            <div class="content-grid">
+                <div class="card">
+                    <h3>🎤 Azure AI Speech</h3>
+                    <p>Conversão entre fala e texto com suporte multilíngue e síntese neural de voz.</p>
+                    <ul>
+                        <li>Reconhecimento de fala em tempo real</li>
+                        <li>Síntese de voz natural</li>
+                        <li>Tradução de fala</li>
+                        <li>Identificação de locutor</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>💬 Azure AI Language</h3>
+                    <p>Processamento de linguagem natural para análise semântica e classificação de texto.</p>
+                    <ul>
+                        <li>Análise de sentimento</li>
+                        <li>Extração de entidades</li>
+                        <li>Tradução automática</li>
+                        <li>Detecção de idioma</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>👁️ Azure AI Vision</h3>
+                    <p>Análise de imagens e documentos com OCR e detecção de faces.</p>
+                    <ul>
+                        <li>Reconhecimento óptico (OCR)</li>
+                        <li>Análise de documentos</li>
+                        <li>Detecção de faces</li>
+                        <li>Classificação de imagens</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>🛡️ Azure Content Safety</h3>
+                    <p>Detecção e filtragem de conteúdo prejudicial em textos e imagens.</p>
+                    <ul>
+                        <li>Moderação de texto</li>
+                        <li>Moderação de imagem</li>
+                        <li>Filtros customizados</li>
+                        <li>Detecção de PII</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 3: Azure Speech em Detalhes -->
+        <div class="slide slide-3">
+            <h2>🎤 Azure AI Speech - Detalhado</h2>
+            <div class="content-grid">
+                <div class="card">
+                    <h3>Funcionalidades Principais</h3>
+                    <ul>
+                        <li><strong>Speech-to-Text (STT):</strong> Transcrição de áudio em tempo real</li>
+                        <li><strong>Text-to-Speech (TTS):</strong> Síntese neural de voz com múltiplas vozes</li>
+                        <li><strong>Tradução de Fala:</strong> Conversão entre idiomas</li>
+                        <li><strong>Reconhecimento de Locutor:</strong> Identificação de falantes</li>
+                        <li><strong>Avaliação de Pronúncia:</strong> Análise de qualidade de fala</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="feature-list">
+                <div class="feature-item">
+                    <h4>📞 Conversão de Fala em Texto em Tempo Real</h4>
+                    <p>Transcrição instantânea de áudio transmitido</p>
+                </div>
+                <div class="feature-item">
+                    <h4>🎵 Galeria do Serviço de Voz</h4>
+                    <p>Múltiplas vozes neural e personalização</p>
+                </div>
+                <div class="feature-item">
+                    <h4>👤 Voz Pessoal</h4>
+                    <p>Treinamento de vozes customizadas</p>
+                </div>
+                <div class="feature-item">
+                    <h4>🎭 Avatar de Conversão</h4>
+                    <p>Representação visual da síntese de voz</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 4: Azure Language em Detalhes -->
+        <div class="slide slide-4">
+            <h2>💬 Azure AI Language - Detalhado</h2>
+            <p style="margin-bottom: 30px; font-size: 1.1em;">Processamento avançado de linguagem natural para análise semântica e compreensão contextual.</p>
+            
+            <h3 style="color: #764ba2; margin-bottom: 15px;">Novidades de Linguagem</h3>
+            <table class="feature-table">
+                <thead>
+                    <tr>
+                        <th>Funcionalidade</th>
+                        <th>Descrição</th>
+                        <th>Aplicação</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Extrair PII</strong></td>
+                        <td>Identificação de informações pessoais em conversas</td>
+                        <td>LGPD/GDPR Compliance</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Extrair Saúde</strong></td>
+                        <td>Análise de entidades médicas em documentos</td>
+                        <td>Healthcare Systems</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Resumir Conteúdo</strong></td>
+                        <td>Geração automática de resumos de conversas</td>
+                        <td>Call Centers</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Análise de Sentimento</strong></td>
+                        <td>Classificação de emoções e opiniões</td>
+                        <td>Social Media Monitoring</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Tradução</strong></td>
+                        <td>Conversão entre 100+ idiomas</td>
+                        <td>Comunicação Global</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Slide 5: Azure Vision em Detalhes -->
+        <div class="slide slide-5">
+            <h2>👁️ Azure AI Vision + Document</h2>
+            <p style="margin-bottom: 30px; font-size: 1.1em;">Análise avançada de imagens, documentos e extração inteligente de dados estruturados.</p>
+            
+            <h3 style="color: #764ba2; margin-bottom: 20px;">Modelos Especializados para Documentos</h3>
+            <div class="vision-grid">
+                <div class="vision-card">
+                    <div class="icon">📄</div>
+                    <h4>Invoices</h4>
+                    <p>Extração de dados de notas fiscais (Amount, Vendor, Date)</p>
+                </div>
+                <div class="vision-card">
+                    <div class="icon">🧾</div>
+                    <h4>Receipts</h4>
+                    <p>Análise de recibos e itens de compra</p>
+                </div>
+                <div class="vision-card">
+                    <div class="icon">🆔</div>
+                    <h4>Identity Documents</h4>
+                    <p>Extração de dados de documentos de identidade</p>
+                </div>
+                <div class="vision-card">
+                    <div class="icon">💳</div>
+                    <h4>Credit Cards</h4>
+                    <p>Processamento de cartões de crédito</p>
+                </div>
+                <div class="vision-card">
+                    <div class="icon">⚖️</div>
+                    <h4>Contracts</h4>
+                    <p>Análise e extração de cláusulas contratuais</p>
+                </div>
+                <div class="vision-card">
+                    <div class="icon">🏥</div>
+                    <h4>Health Cards</h4>
+                    <p>Análise de cartões de seguro saúde</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 6: Azure Content Safety -->
+        <div class="slide slide-6">
+            <h2>🛡️ Azure Content Safety - Segurança</h2>
+            <p style="margin-bottom: 30px; font-size: 1.1em;">Detecção inteligente de conteúdo prejudicial para manter ambientes seguros.</p>
+            
+            <div class="security-categories">
+                <div class="security-category">
+                    <h4>📝 Filtrar Conteúdo de Texto</h4>
+                    <p>
+                        • Moderação de texto<br>
+                        • Detecção de fundamentação<br>
+                        • Proteção de material LLM<br>
+                        • Esboços de solicitação (Jailbreak detection)
+                    </p>
+                </div>
+                <div class="security-category">
+                    <h4>🖼️ Filtrar Conteúdo de Imagem</h4>
+                    <p>
+                        • Moderação de imagem<br>
+                        • Análise multimodal<br>
+                        • Detecção de conteúdo visual prejudicial<br>
+                        • Combina análise de texto + imagem
+                    </p>
+                </div>
+                <div class="security-category">
+                    <h4>⚙️ Personalização</h4>
+                    <p>
+                        • Categorias customizadas<br>
+                        • Mensagem do sistema<br>
+                        • Políticas específicas do negócio<br>
+                        • Guardrails para LLMs
+                    </p>
+                </div>
+                <div class="security-category">
+                    <h4>🤖 Agentic Workflow</h4>
+                    <p>
+                        • Task Adherence (aderência a tarefas)<br>
+                        • Monitoramento de conformidade<br>
+                        • Bloqueio de desvios<br>
+                        • Garantir respostas alinhadas
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 7: Conclusão -->
+        <div class="slide slide-7">
+            <h2>✨ Conclusão</h2>
+            <div class="conclusion-content">
+                <p>Os serviços de IA no Microsoft Azure oferecem um ecossistema <span class="highlight">completo e integrado</span> para implementação de inteligência artificial em aplicações empresariais.</p>
+                
+                <div class="next-steps">
+                    <h3>🎯 Próximos Passos</h3>
+                    <ul>
+                        <li>Explorar o Azure AI Studio (ai.azure.com)</li>
+                        <li>Criar projetos pilotos com cada serviço</li>
+                        <li>Implementar integração com suas aplicações</li>
+                        <li>Monitorar e otimizar custos e performance</li>
+                        <li>Escalar para produção com segurança e compliance</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <div class="nav-container">
+            <button onclick="previousSlide()" id="prevBtn">← Anterior</button>
+            <div class="dots" id="dots"></div>
+            <span class="slide-counter"><span id="currentSlide">1</span> / <span id="totalSlides">7</span></span>
+            <button onclick="nextSlide()" id="nextBtn">Próximo →</button>
+        </div>
+    </div>
+
+    <script>
+        let currentSlide = 1;
+        const totalSlides = document.querySelectorAll('.slide').length;
+        document.getElementById('totalSlides').textContent = totalSlides;
+
+        function showSlide(n) {
+            const slides = document.querySelectorAll('.slide');
+            
+            if (n > totalSlides) {
+                currentSlide = totalSlides;
+            }
+            if (n < 1) {
+                currentSlide = 1;
+            }
+
+            slides.forEach(slide => {
+                slide.classList.remove('active');
+            });
+
+            slides[currentSlide - 1].classList.add('active');
+            document.getElementById('currentSlide').textContent = currentSlide;
+
+            // Update dots
+            const dots = document.querySelectorAll('.dot');
+            dots.forEach(dot => {
+                dot.classList.remove('active');
+            });
+            dots[currentSlide - 1].classList.add('active');
+
+            // Update button states
+            document.getElementById('prevBtn').disabled = currentSlide === 1;
+            document.getElementById('nextBtn').disabled = currentSlide === totalSlides;
+        }
+
+        function nextSlide() {
+            currentSlide++;
+            showSlide(currentSlide);
+        }
+
+        function previousSlide() {
+            currentSlide--;
+            showSlide(currentSlide);
+        }
+
+        function goToSlide(n) {
+            currentSlide = n;
+            showSlide(currentSlide);
+        }
+
+        // Criar dots
+        const dotsContainer = document.getElementById('dots');
+        for (let i = 1; i <= totalSlides; i++) {
+            const dot = document.createElement('div');
+            dot.className = 'dot';
+            dot.onclick = () => goToSlide(i);
+            dotsContainer.appendChild(dot);
+        }
+
+        // Teclado navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') previousSlide();
+            if (e.key === 'ArrowRight') nextSlide();
+        });
+
+        // Initialize
+        showSlide(currentSlide);
+    </script>
+</body>
+</html>
