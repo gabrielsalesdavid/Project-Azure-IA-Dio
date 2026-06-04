@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resumo Executivo - Documentação Azure AI</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .page-break {
+            page-break-after: always;
+            margin: 40px 0;
+            padding: 40px 0;
+            border-bottom: 2px solid #ddd;
+        }
+
+        /* Capa */
+        .cover {
+            text-align: center;
+            padding: 80px 0;
+            border-bottom: 3px solid #667eea;
+            margin-bottom: 60px;
+        }
+
+        .cover h1 {
+            font-size: 3em;
+            color: #667eea;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .cover .subtitle {
+            font-size: 1.5em;
+            color: #764ba2;
+            margin-bottom: 40px;
+        }
+
+        .cover .info {
+            font-size: 1.1em;
+            color: #666;
+            margin-top: 60px;
+        }
+
+        /* Títulos */
+        h1 {
+            color: #667eea;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            margin-top: 40px;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            color: #764ba2;
+            font-size: 1.8em;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            border-left: 5px solid #667eea;
+            padding-left: 15px;
+        }
+
+        h3 {
+            color: #667eea;
+            font-size: 1.3em;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        /* Parágrafos */
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+            font-size: 0.95em;
+        }
+
+        /* Cards de Resumo */
+        .summary-card {
+            background: linear-gradient(135deg, #667eea20 0%, #764ba220 100%);
+            padding: 25px;
+            border-radius: 10px;
+            border-left: 5px solid #667eea;
+            margin: 20px 0;
+        }
+
+        .summary-card h3 {
+            color: #667eea;
+            margin-top: 0;
+        }
+
+        /* Listas */
+        ul, ol {
+            margin-left: 25px;
+            margin-bottom: 15px;
+        }
+
+        li {
+            margin-bottom: 8px;
+            text-align: justify;
+        }
+
+        /* Tabelas */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 0.9em;
+        }
+
+        th {
+            background: #667eea;
+            color: white;
+            padding: 12px;
+            text-align: left;
+        }
+
+        td {
+            padding: 12px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        tr:hover {
+            background: #f9f9f9;
+        }
+
+        /* Destaque */
+        .highlight {
+            background: #fff3cd;
+            padding: 15px;
+            border-radius: 5px;
+            border-left: 4px solid #ffc107;
+            margin: 15px 0;
+        }
+
+        /* Índice */
+        .toc {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 30px 0;
+        }
+
+        .toc h2 {
+            margin-top: 0;
+        }
+
+        .toc ol {
+            margin-left: 20px;
+        }
+
+        .toc li {
+            margin-bottom: 10px;
+        }
+
+        /* Rodapé */
+        .footer {
+            margin-top: 60px;
+            padding-top: 20px;
+            border-top: 2px solid #ddd;
+            text-align: center;
+            font-size: 0.9em;
+            color: #666;
+        }
+
+        /* Print Styles */
+        @media print {
+            body {
+                background: white;
+            }
+
+            .container {
+                max-width: 100%;
+                padding: 20px;
+                box-shadow: none;
+            }
+
+            .page-break {
+                page-break-after: always;
+            }
+
+            a {
+                color: #667eea;
+            }
+        }
+
+        /* Icons */
+        .icon {
+            display: inline-block;
+            margin-right: 10px;
+            font-size: 1.2em;
+        }
+
+        .section-number {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            line-height: 35px;
+            text-align: center;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- CAPA -->
+        <div class="cover">
+            <h1>📚 RESUMO EXECUTIVO</h1>
+            <div class="subtitle">Documentação de Serviços de IA no Microsoft Azure</div>
+            <div class="info">
+                <p><strong>Bootcamp:</strong> DIO - Bradesco</p>
+                <p><strong>Data:</strong> 04 de Junho de 2026</p>
+                <p><strong>Versão:</strong> 1.0</p>
+            </div>
+        </div>
+
+        <!-- ÍNDICE -->
+        <div class="toc page-break">
+            <h2>📑 Índice</h2>
+            <ol>
+                <li>Introdução</li>
+                <li>Azure AI Services - Visão Geral</li>
+                <li>Azure AI Speech</li>
+                <li>Azure AI Language</li>
+                <li>Azure AI Vision + Document</li>
+                <li>Azure Content Safety</li>
+                <li>Recursos Adicionais</li>
+                <li>Conclusão</li>
+            </ol>
+        </div>
+
+        <!-- SEÇÃO 1: INTRODUÇÃO -->
+        <h1>1. Introdução</h1>
+        <p>
+            A Microsoft Azure oferece uma suite completa de serviços de Inteligência Artificial (IA) que permite 
+            desenvolvedores e organizações integrar capacidades cognitivas avançadas em suas aplicações. Esta 
+            documentação consolida informações sobre os principais serviços de IA disponíveis na plataforma.
+        </p>
+
+        <div class="highlight">
+            <strong>Objetivo:</strong> Proporcionar um resumo executivo dos serviços de IA do Azure, suas 
+            funcionalidades, aplicações práticas e recursos disponíveis para implementação.
+        </div>
+
+        <div class="page-break"></div>
+
+        <!-- SEÇÃO 2: VISÃO GERAL -->
+        <h1>2. <span class="section-number">2</span>Azure AI Services - Visão Geral</h1>
+
+        <h2>📌 O que são Azure AI Services?</h2>
+        <p>
+            Azure AI Services é um conjunto integrado de APIs e modelos pré-treinados que permite adicionar 
+            inteligência artificial a aplicações sem necessidade de expertise profunda em machine learning.
+        </p>
+
+        <h2>🎯 Serviços Principais</h2>
+        <table>
+            <tr>
+                <th>Serviço</th>
+                <th>Função Principal</th>
+                <th>Casos de Uso</th>
+            </tr>
+            <tr>
+                <td><strong>🎤 Azure AI Speech</strong></td>
+                <td>Processamento de áudio e voz</td>
+                <td>Transcrição, síntese de voz, tradução de fala</td>
+            </tr>
+            <tr>
+                <td><strong>💬 Azure AI Language</strong></td>
+                <td>Processamento de linguagem natural</td>
+                <td>Análise de sentimento, tradução, extração de dados</td>
+            </tr>
+            <tr>
+                <td><strong>👁️ Azure AI Vision</strong></td>
+                <td>Análise de imagens e documentos</td>
+                <td>OCR, detecção de faces, análise de imagens</td>
+            </tr>
+            <tr>
+                <td><strong>🛡️ Content Safety</strong></td>
+                <td>Moderação de conteúdo</td>
+                <td>Filtragem de texto/imagem, proteção de LLM</td>
+            </tr>
+        </table>
+
+        <h2>💰 Modelo de Preços</h2>
+        <ul>
+            <li><strong>Free Tier:</strong> Limite de requisições por mês (ideal para testes)</li>
+            <li><strong>Standard:</strong> Pagamento por uso (pay-as-you-go)</li>
+            <li><strong>Premium:</strong> Para volume alto com SLA garantido</li>
+        </ul>
+
+        <div class="page-break"></div>
+
+        <!-- SEÇÃO 3: AZURE AI SPEECH -->
+        <h1>3. <span class="section-number">3</span>Azure AI Speech</h1>
+
+        <div class="summary-card">
+            <h3>🎤 Resumo Executivo</h3>
+            <p>
+                Serviço de processamento de áudio que converte fala em texto e texto em fala com qualidade 
+                neural, suportando múltiplos idiomas e oferecendo recursos avançados de reconhecimento de locutor 
+                e avaliação de pronúncia.
+            </p>
+        </div>
+
+        <h2>📋 Funcionalidades Principais</h2>
+        <ul>
+            <li><strong>Speech-to-Text (STT):</strong> Conversão de áudio em tempo real com alta precisão</li>
+            <li><strong>Text-to-Speech (TTS):</strong> Síntese de voz neural com múltiplas vozes</li>
+            <li><strong>Tradução de Fala:</strong> Tradução entre idiomas durante conversação</li>
+            <li><strong>Reconhecimento de Locutor:</strong> Identificação de falantes únicos</li>
+            <li><strong>Avaliação de Pronúncia:</strong> Análise da qualidade de pronúncia</li>
+        </ul>
+
+        <h2>🌍 Suporte Multilíngue</h2>
+        <p>
+            Suporta mais de <strong>100 idiomas e variantes</strong>, incluindo português brasileiro, 
+            com reconhecimento de dialetos e sotaques.
+        </p>
+
+        <h2>🔧 SDKs Disponíveis</h2>
+        <ul>
+            <li>C# / .NET</li>
+            <li>Python</li>
+            <li>JavaScript / Node.js</li>
+            <li>Java</li>
+            <li>Objective-C / Swift</li>
+        </ul>
+
+        <h2>💼 Casos de Uso</h2>
+        <ul>
+            <li>Assistentes virtuais e chatbots</li>
+            <li>Transcrição de reuniões e conferências</li>
+            <li>Aplicações acessíveis para deficientes auditivos</li>
+            <li>Legendagem em tempo real de vídeos</li>
+            <li>Sistemas de comando por voz</li>
+        </ul>
+
+        <div class="page-break"></div>
+
+        <!-- SEÇÃO 4: AZURE AI LANGUAGE -->
+        <h1>4. <span class="section-number">4</span>Azure AI Language</h1>
+
+        <div class="summary-card">
+            <h3>💬 Resumo Executivo</h3>
+            <p>
+                Serviço de Processamento de Linguagem Natural (NLP) que oferece análise semântica, 
+                classificação de texto, extração de entidades e compreensão de intenção. Suporta mais de 
+                100 idiomas com APIs bem documentadas.
+            </p>
+        </div>
+
+        <h2>📋 Funcionalidades Principais</h2>
+        <ul>
+            <li><strong>Análise de Sentimento:</strong> Classificação de emoções e opiniões em textos</li>
+            <li><strong>Extração de Entidades (NER):</strong> Identificação de nomes, datas, localizações</li>
+            <li><strong>Detecção de PII:</strong> Identificação de informações pessoais identificáveis</li>
+            <li><strong>Extração de Saúde:</strong> Análise de termos e entidades médicas</li>
+            <li><strong>Tradução:</strong> Conversão entre 100+ idiomas</li>
+            <li><strong>Resumo Automático:</strong> Geração de resumos de conversas e documentos</li>
+        </ul>
+
+        <h2>🏥 Recurso Especializado: Healthcare</h2>
+        <p>
+            Extração de entidades médicas como diagnósticos, medicamentos, sintomas e relacionamentos 
+            clínicos de textos em português e outros idiomas.
+        </p>
+
+        <h2>🔐 Conformidade</h2>
+        <ul>
+            <li><strong>LGPD:</strong> Compatível com Lei Geral de Proteção de Dados (Brasil)</li>
+            <li><strong>GDPR:</strong> Compatível com regulamentações europeias</li>
+            <li><strong>PII Detection:</strong> Detecção automática de dados sensíveis</li>
+        </ul>
+
+        <h2>💼 Casos de Uso</h2>
+        <ul>
+            <li>Análise de feedback de clientes em redes sociais</li>
+            <li>Classificação automática de documentos</li>
+            <li>Sistemas de busca inteligente</li>
+            <li>Chatbots com compreensão contextual</li>
+            <li>Análise de riscos em conformidade</li>
+        </ul>
+
+        <div class="page-break"></div>
+
+        <!-- SEÇÃO 5: AZURE AI VISION + DOCUMENT -->
+        <h1>5. <span class="section-number">5</span>Azure AI Vision + Document</h1>
+
+        <div class="summary-card">
+            <h3>👁️ Resumo Executivo</h3>
+            <p>
+                Serviço integrado para análise de imagens e documentos, oferecendo OCR avançado, 
+                detecção de faces, análise de layouts e modelos pré-construídos para extração inteligente 
+                de dados de documentos específicos como invoices, contratos e formulários.
+            </p>
+        </div>
+
+        <h2>📋 Funcionalidades Principais</h2>
+        <ul>
+            <li><strong>OCR (Optical Character Recognition):</strong> Reconhecimento de texto impresso e manuscrito</li>
+            <li><strong>Detecção de Faces:</strong> Identificação de faces com análise de atributos</li>
+            <li><strong>Análise de Imagens:</strong> Classificação, descrição e análise de conteúdo visual</li>
+            <li><strong>Document Intelligence:</strong> Extração estruturada de dados de documentos</li>
+            <li><strong>Layout Detection:</strong> Identificação de tabelas, formulários e estruturas</li>
+        </ul>
+
+        <h2>📄 Modelos Pré-construídos para Documentos</h2>
+        <table>
+            <tr>
+                <th>Tipo de Documento</th>
+                <th>Dados Extraídos</th>
+                <th>Aplicação</th>
+            </tr>
+            <tr>
+                <td><strong>Invoice</strong></td>
+                <td>Vendor, Date, Amount, Items</td>
+                <td>Contabilidade automática</td>
+            </tr>
+            <tr>
+                <td><strong>Receipt</strong></td>
+                <td>Merchant, Total, Items</td>
+                <td>Gestão de despesas</td>
+            </tr>
+            <tr>
+                <td><strong>ID Document</strong></td>
+                <td>Name, DOB, Document #</td>
+                <td>KYC (Know Your Customer)</td>
+            </tr>
+            <tr>
+                <td><strong>Health Card</strong></td>
+                <td>Member ID, Plan, Provider</td>
+                <td>Processamento de seguros</td>
+            </tr>
+            <tr>
+                <td><strong>Tax Form</strong></td>
+                <td>Income, Deductions, Credits</td>
+                <td>Compliance fiscal</td>
+            </tr>
+            <tr>
+                <td><strong>Contract</strong></td>
+                <td>Parties, Terms, Clauses</td>
+                <td>Análise de contratos</td>
+            </tr>
+        </table>
+
+        <h2>🎓 Custom Models</h2>
+        <p>
+            Possibilidade de treinar modelos customizados com seus próprios dados para documentos 
+            específicos do negócio.
+        </p>
+
+        <h2>💼 Casos de Uso</h2>
+        <ul>
+            <li>Automação de processamento de invoices</li>
+            <li>Digitalização de documentos e OCR</li>
+            <li>Análise de contratos legais</li>
+            <li>Verificação de identidade (KYC)</li>
+            <li>Processamento de formulários em lote</li>
+        </ul>
+
+        <div class="page-break"></div>
+
+        <!-- SEÇÃO 6: AZURE CONTENT SAFETY -->
+        <h1>6. <span class="section-number">6</span>Azure Content Safety</h1>
+
+        <div class="summary-card">
+            <h3>🛡️ Resumo Executivo</h3>
+            <p>
+                Serviço de moderação inteligente que detecta e filtra conteúdo prejudicial em textos e imagens. 
+                Oferece proteção contra jailbreak de modelos de IA, detecção de material protegido e permite 
+                categorias de filtragem customizadas.
+            </p>
+        </div>
+
+        <h2>📋 Funcionalidades Principais</h2>
+
+        <h3>🔤 Moderação de Texto</h3>
+        <ul>
+            <li>Detecção de conteúdo prejudicial e ofensivo</li>
+            <li>Identificação de fundamentação de informações</li>
+            <li>Detecção de material protegido por copyright</li>
+            <li>Proteção contra jailbreak de LLMs</li>
+        </ul>
+
+        <h3>🖼️ Moderação de Imagem</h3>
+        <ul>
+            <li>Análise de conteúdo visual prejudicial</li>
+            <li>Moderação multimodal (texto + imagem)</li>
+            <li>Detecção de conteúdo NSFW (Not Safe For Work)</li>
+        </ul>
+
+        <h3>⚙️ Personalização</h3>
+        <ul>
+            <li>Definição de categorias customizadas</li>
+            <li>Mensagens de sistema personalizadas</li>
+            <li>Políticas específicas por negócio</li>
+        </ul>
+
+        <h2>🤖 Proteção para LLMs</h2>
+        <p>
+            Oferece guardrails e proteção específica para Large Language Models (LLMs), evitando:
+        </p>
+        <ul>
+            <li>Jailbreak attempts (tentativas de contornar restrições)</li>
+            <li>Prompt injections (injeção de comandos maliciosos)</li>
+            <li>Desvios de tarefas (task adherence)</li>
+        </ul>
+
+        <h2>💼 Casos de Uso</h2>
+        <ul>
+            <li>Moderação de plataformas de redes sociais</li>
+            <li>Filtragem de conteúdo em aplicações web</li>
+            <li>Proteção de chatbots e assistentes virtuais</li>
+            <li>Conformidade com políticas de empresa</li>
+            <li>Segurança em aplicações de IA generativa</li>
+        </ul>
+
+        <div class="page-break"></div>
+
+        <!-- SEÇÃO 7: RECURSOS ADICIONAIS -->
+        <h1>7. <span class="section-number">7</span>Recursos Adicionais</h1>
+
+        <h2>📚 Documentação Oficial</h2>
+        <p>
+            Toda a documentação completa está disponível em <strong>learn.microsoft.com</strong>, com:
+        </p>
+        <ul>
+            <li>Guias de início rápido (quickstart)</li>
+            <li>Tutoriais passo a passo</li>
+            <li>Referência de APIs</li>
+            <li>Exemplos de código em múltiplas linguagens</li>
+        </ul>
+
+        <h2>🎓 Certificações</h2>
+        <ul>
+            <li><strong>Azure AI Engineer Associate:</strong> Certificação profissional da Microsoft</li>
+            <li><strong>Exam AI-102:</strong> Exame oficial de certificação</li>
+            <li>Trilhas de aprendizado no Microsoft Learn</li>
+        </ul>
+
+        <h2>💻 Exemplos de Código</h2>
+        <p>
+            Repositórios GitHub com exemplos prontos:
+        </p>
+        <ul>
+            <li>Azure-Samples (repositório oficial)</li>
+            <li>cognitive-services-speech-sdk</li>
+            <li>Document-Intelligence-Resources</li>
+            <li>E muitos outros projetos de exemplo</li>
+        </ul>
+
+        <h2>🤝 Comunidades de Suporte</h2>
+        <ul>
+            <li><strong>Microsoft Tech Community:</strong> Fórum oficial</li>
+            <li><strong>Stack Overflow:</strong> Tag azure-cognitive-services</li>
+            <li><strong>Microsoft Q&A:</strong> Suporte direto da Microsoft</li>
+        </ul>
+
+        <h2>🔒 Segurança e Conformidade</h2>
+        <ul>
+            <li><strong>LGPD (Brasil):</strong> Compatibilidade com legislação brasileira</li>
+            <li><strong>GDPR (UE):</strong> Conformidade europeia</li>
+            <li><strong>Azure Key Vault:</strong> Gerenciamento seguro de credenciais</li>
+            <li><strong>Private Endpoints:</strong> Isolamento de rede</li>
+        </ul>
+
+        <div class="page-break"></div>
+
+        <!-- SEÇÃO 8: CONCLUSÃO -->
+        <h1>8. <span class="section-number">8</span>Conclusão</h1>
+
+        <div class="summary-card">
+            <h3>✨ Resumo Final</h3>
+            <p>
+                Os serviços de IA do Microsoft Azure formam um ecossistema completo e integrado que permite 
+                organizações de qualquer tamanho implementar inteligência artificial avançada em suas 
+                aplicações sem necessidade de expertise profunda em machine learning.
+            </p>
+        </div>
+
+        <h2>🎯 Diferenciais do Azure AI</h2>
+        <ul>
+            <li><strong>Integração:</strong> Todos os serviços trabalham perfeitamente juntos</li>
+            <li><strong>Escalabilidade:</strong> Infraestrutura pronta para crescimento</li>
+            <li><strong>Segurança:</strong> Conformidade com regulamentações internacionais</li>
+            <li><strong>Suporte:</strong> Documentação completa e comunidade ativa</li>
+            <li><strong>Modelos Pré-construídos:</strong> Economia de tempo e recursos</li>
+        </ul>
+
+        <h2>🚀 Próximos Passos Recomendados</h2>
+        <ol>
+            <li><strong>Exploração:</strong> Acessar ai.azure.com e testar os serviços</li>
+            <li><strong>Prototipagem:</strong> Criar projetos pilotos com seus dados</li>
+            <li><strong>Desenvolvimento:</strong> Integrar APIs em suas aplicações</li>
+            <li><strong>Otimização:</strong> Ajustar modelos para melhor performance</li>
+            <li><strong>Produção:</strong> Implementar com monitoramento e segurança</li>
+        </ol>
+
+        <h2>📖 Recursos de Aprendizado</h2>
+        <ul>
+            <li>Microsoft Learn (learn.microsoft.com)</li>
+            <li>Azure AI Studio (ai.azure.com)</li>
+            <li>GitHub Samples (github.com/Azure-Samples)</li>
+            <li>YouTube - Microsoft Azure Channel</li>
+            <li>Certificação Azure AI Engineer</li>
+        </ul>
+
+        <div class="highlight">
+            <strong>Recomendação Final:</strong> Comece explorando os serviços no Azure AI Studio, 
+            teste com dados de amostra e consulte a documentação oficial para implementação em produção.
+        </div>
+
+        <!-- RODAPÉ -->
+        <div class="footer page-break">
+            <h2>📋 Informações do Documento</h2>
+            <p><strong>Título:</strong> Resumo Executivo - Documentação Azure AI</p>
+            <p><strong>Versão:</strong> 1.0</p>
+            <p><strong>Data:</strong> 04 de Junho de 2026</p>
+            <p><strong>Instituição:</strong> Bootcamp DIO - Bradesco</p>
+            <p><strong>Autor:</strong> Gabriel Sales David</p>
+            <hr>
+            <p>
+                Este documento é um resumo executivo da documentação completa sobre os Serviços de 
+                Inteligência Artificial do Microsoft Azure. Para informações detalhadas, consulte:
+            </p>
+            <ul>
+                <li>DOCUMENTACAO_ACADEMICA_AZURE_IA.md (15K palavras)</li>
+                <li>REFERENCIAS_DOCUMENTACOES.md (Links oficiais)</li>
+                <li>README.md (Visão geral visual)</li>
+            </ul>
+            <p style="margin-top: 20px; font-style: italic;">
+                Gerado para fins acadêmicos e corporativos. Autorizado para distribuição em ambiente educacional.
+            </p>
+        </div>
+    </div>
+
+    <script>
+        // Adiciona número de página ao imprimir
+        window.addEventListener('beforeprint', function() {
+            console.log('Preparando para impressão em PDF...');
+        });
+    </script>
+</body>
+</html>
