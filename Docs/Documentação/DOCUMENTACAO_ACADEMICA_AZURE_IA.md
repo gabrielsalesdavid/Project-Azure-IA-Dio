@@ -36,7 +36,7 @@ Os serviços abordados incluem:
 
 ### 1.1 Passo 1 - Página Inicial do Azure
 
-![1º - AI-Azure-Home.jpg](../../Imagem/1º%20-%20AI-Azure-Home.jpg)
+![1º - AI-Azure-Home.jpg](Docs/Imagem/1º%20-%20AI-Azure-Home.jpg)
 
 **Descrição:**
 A primeira etapa envolve acessar o portal do Azure através do navegador web. A página inicial (Home) apresenta:
@@ -62,7 +62,7 @@ A primeira etapa envolve acessar o portal do Azure através do navegador web. A 
 
 ### 1.2 Passo 2 - Catálogo de Modelos e Criação
 
-![2º - AI-Azure-Creat.jpg](../../Imagem/2º%20-%20AI-Azure-Creat.jpg)
+![2º - AI-Azure-Creat.jpg](Docs/Imagem/2º%20-%20AI-Azure-Creat.jpg)
 
 **Descrição:**
 Após acessar o portal, o usuário é apresentado ao **Catálogo de Modelos**, que exibe todos os serviços de IA disponíveis na plataforma Azure.
@@ -95,7 +95,7 @@ Este é o ponto de entrada para provisionar qualquer serviço de IA no Azure. A 
 
 ### 1.3 Passo 3 - Exploração Inicial de Serviços
 
-![3º - AI-Azure-Explore.jpg](../../Imagem/3º%20-%20AI-Azure-Explore.jpg)
+![3º - AI-Azure-Explore.jpg](Docs/Imagem/3º%20-%20AI-Azure-Explore.jpg)
 
 **Descrição:**
 A interface de exploração permite aos usuários testar funcionalidades dos serviços antes de criar recursos completos.
@@ -128,7 +128,7 @@ A interface de exploração permite aos usuários testar funcionalidades dos ser
 
 ### 1.4 Passo 4 - Recursos Disponíveis
 
-![4º - AI-Azure-Explore01.jpg](../../Imagem/4º%20-%20AI-Azure-Explore01.jpg)
+![4º - AI-Azure-Explore01.jpg](Docs/Imagem/4º%20-%20AI-Azure-Explore01.jpg)
 
 **Descrição:**
 A segunda tela de exploração oferece uma visão expandida dos recursos e documentação disponíveis.
@@ -192,7 +192,7 @@ A criação de um projeto no Azure envolve várias etapas de configuração, cad
 
 ### 3.1 Visão Geral do Serviço
 
-![5º - AI-Azure-Speech-Home.jpg](../../Imagem/5º%20-%20AI-Azure-Speech-Home.jpg)
+![5º - AI-Azure-Speech-Home.jpg](Docs/Imagem/5º%20-%20AI-Azure-Speech-Home.jpg)
 
 **Definição:**
 Azure AI Speech é um serviço de processamento de áudio que oferece capacidades de:
@@ -225,7 +225,7 @@ Azure AI Speech é um serviço de processamento de áudio que oferece capacidade
 
 ### 3.2 Configuração Inicial - Ajustes
 
-![6º - AI-Azure-Speech-Home-Ajust.jpg](../../Imagem/6º%20-%20AI-Azure-Speech-Home-Ajust.jpg)
+![6º - AI-Azure-Speech-Home-Ajust.jpg](Docs/Imagem/6º%20-%20AI-Azure-Speech-Home-Ajust.jpg)
 
 **Descrição:**
 Esta tela apresenta opções de ajuste e configuração para o projeto Azure AI Speech.
@@ -272,7 +272,7 @@ Esta tela apresenta opções de ajuste e configuração para o projeto Azure AI 
 
 ### 3.3 Criação do Projeto - Formulário Completo
 
-![7º - AI-Azure-Speech-Home-Ajust-Creat.jpg](../../Imagem/7º%20-%20AI-Azure-Speech-Home-Ajust-Creat.jpg)
+![7º - AI-Azure-Speech-Home-Ajust-Creat.jpg](Docs/Imagem/7º%20-%20AI-Azure-Speech-Home-Ajust-Creat.jpg)
 
 **Descrição:**
 O formulário de criação de projeto apresenta todos os campos necessários para provisionar um novo serviço Azure AI Speech.
@@ -329,7 +329,7 @@ O formulário de criação de projeto apresenta todos os campos necessários par
 
 ### 3.4 Interface de Gerenciamento - Abas e Funcionalidades
 
-![8º - AI-Azure-Speech.jpg](../../Imagem/8º%20-%20AI-Azure-Speech.jpg)
+![8º - AI-Azure-Speech.jpg](Docs/Imagem/8º%20-%20AI-Azure-Speech.jpg)
 
 **Descrição:**
 Após criar o projeto, o usuário acessa a interface de gerenciamento que contém várias abas funcionais.
@@ -366,7 +366,7 @@ As "Chaves e pontos de extremidade" são críticos para:
 
 ### 3.5 Chaves, Pontos de Extremidade e Documentação
 
-![9º - AI-Azure-Speech01.jpg](../../Imagem/9º%20-%20AI-Azure-Speech01.jpg)
+![9º - AI-Azure-Speech01.jpg](Docs/Imagem/9º%20-%20AI-Azure-Speech01.jpg)
 
 **Descrição:**
 Esta tela apresenta os recursos de documentação, guias de início rápido e funcionalidades do Azure AI Speech.
@@ -434,7 +434,7 @@ Esta tela apresenta os recursos de documentação, guias de início rápido e fu
 
 ### 4.1 Visão Geral e Funcionalidades
 
-![10º - AI-Azure-Linguage.jpg](../../Imagem/10º%20-%20AI-Azure-Linguage.jpg)
+![10º - AI-Azure-Linguage.jpg](Docs/Imagem/10º%20-%20AI-Azure-Linguage.jpg)
 
 **Definição:**
 Azure AI Language é um serviço de processamento de linguagem natural (NLP) que oferece análise semântica, classificação de texto, extração de entidades, e compreensão de intenção.
@@ -497,7 +497,7 @@ Azure AI Language é um serviço de processamento de linguagem natural (NLP) que
 
 ### 5.1 Visão + Document - Processamento de Imagens e Documentos
 
-![11º - AI-Azure-Vision-Document.jpg](../../Imagem/11º%20-%20AI-Azure-Vision-Document.jpg)
+![11º - AI-Azure-Vision-Document.jpg](Docs/Imagem/11º%20-%20AI-Azure-Vision-Document.jpg)
 
 **Definição:**
 Azure AI Vision + Document é um serviço integrado que combina:
@@ -530,7 +530,7 @@ Azure AI Vision + Document é um serviço integrado que combina:
 
 ### 5.2 Modelos Pré-construídos para Documentos Específicos
 
-![12º - AI-Azure-Vision-Document01.jpg](../../Imagem/12º%20-%20AI-Azure-Vision-Document01.jpg)
+![12º - AI-Azure-Vision-Document01.jpg](Docs/Imagem/12º%20-%20AI-Azure-Vision-Document01.jpg)
 
 **Descrição:**
 O Azure oferece modelos pré-construídos para diferentes tipos de documentos, eliminando necessidade de treinamento customizado.
@@ -613,7 +613,7 @@ O Azure oferece modelos pré-construídos para diferentes tipos de documentos, e
 
 ### 6.1 Content Safety - Detecção e Filtragem de Conteúdo
 
-![13º - AI-Azure-Security.jpg](../../Imagem/13º%20-%20AI-Azure-Security.jpg)
+![13º - AI-Azure-Security.jpg](Docs/Imagem/13º%20-%20AI-Azure-Security.jpg)
 
 **Definição:**
 Azure Content Safety é um serviço dedicado à detecção, classificação e filtragem de conteúdo prejudicial, inapropriado ou potencialmente ilegal em textos e imagens.
